@@ -9,7 +9,7 @@ export default function StoreProvider({
 }: {
   children: React.ReactNode;
 }) {
-  //@ts-expect-error
+  // @ts-expect-error: AppStore type init handled later
   const storeRef = useRef<AppStore>();
 
   if (!storeRef.current) {
