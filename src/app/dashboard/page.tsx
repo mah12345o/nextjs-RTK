@@ -1,6 +1,30 @@
+"use client";
+import { useTheme } from "@/themProvider";
+
 const DashBoard = () => {
+  const { color, changeColor } = useTheme();
+  const colors = ["blue", "red", "green", "purple"];
+
   return (
-    <div>
+    <div style={{ backgroundColor: color }}>
+      <div>
+        {colors?.map((c) => (
+          <button
+            key={c}
+            onClick={() => changeColor(c)}
+            style={{
+              backgroundColor: c,
+              color: "white",
+              margin: "5px",
+              padding: "10px",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            Change to {c}
+          </button>
+        ))}
+      </div>
       <h1>DashBoard</h1>
       <div>
         <pre className="bg-black text-white">
